@@ -1,0 +1,36 @@
+/* Cart.css */
+.cart {
+    border: 1px solid #ddd;
+    padding: 1rem;
+  }
+  
+  .cart .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .cart .item img {
+    width: 50px;
+    margin-right: 1rem;
+  }
+  
+  .cart .item .title {
+    font-weight: bold;
+  }
+  
+  .cart .item .price {
+    color: #888;
+  }
+  
+  .cart .item .quantity {
+    margin-left: auto;
+  }
+  
+  .cart .item button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
