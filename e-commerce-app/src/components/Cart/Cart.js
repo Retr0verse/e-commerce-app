@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import CartItem from './CartItem';
+import './Cart.css';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -33,11 +35,7 @@ const Cart = () => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <div key={item.id}>
-              <h3>{item.title}</h3>
-              <p>Price: ${item.price}</p>
-              <p>Quantity: {item.quantity}</p>
-            </div>
+            <CartItem key={item.id} item={item} />
           ))}
           <h4>Total Price: ${calculateTotalPrice()}</h4>
           <button>Checkout</button>
@@ -48,3 +46,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
