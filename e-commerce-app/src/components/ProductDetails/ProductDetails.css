@@ -1,0 +1,31 @@
+.product-details {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .product-image img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  
+  .product-info {
+    margin-left: 20px;
+  }
+  
+  .product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
