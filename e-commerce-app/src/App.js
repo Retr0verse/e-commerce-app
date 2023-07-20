@@ -1,18 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Homepage from './pages/Homepage';
-import ProductList from './components/ProductList';
-import ProductDetail from './components/ProductDetail';
-import Cart from './components/Cart';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Layout from './Layout';
+import HomePage from './HomePage';
+import ProductDetailPage from './ProductDetailPage';
+import CartPage from './CartPage';
+import CheckoutPage from './CheckoutPage';
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={ProductList} />
-        <Route path="/products/:id" component={ProductDetail} />
-        <Route path="/cart" component={Cart} />
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/product/:productId" component={ProductDetailPage} />
+          <Route path="/cart" component={CartPage} />
+          <Route path="/checkout" component={CheckoutPage} />
+          {/* Add more routes for other pages */}
+        </Switch>
+      </Layout>
     </Router>
   );
 };

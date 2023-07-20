@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard'; // Assuming you have a ProductCard component to render individual products
 import ProductsData from './ProductsData'; // Assuming you have a component to fetch products data
 
-const Homepage = () => {
+const HomePage = () => {
   const products = ProductsData(); // Fetch products data from the backend API
 
   return (
@@ -17,4 +17,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;
