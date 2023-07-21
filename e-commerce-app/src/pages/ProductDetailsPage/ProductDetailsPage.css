@@ -1,0 +1,9 @@
+/* Custom styles for the product details page section */
+.product-details-page {
+    margin: 20px;
+  }
+  
+  .product-details-page img {
+    max-width: 300px;
+  }
+  
