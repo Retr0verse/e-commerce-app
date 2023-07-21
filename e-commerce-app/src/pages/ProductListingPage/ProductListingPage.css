@@ -1,0 +1,11 @@
+/* Custom styles for the product listing page section */
+.product-listing-page {
+    margin: 20px;
+  }
+  
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from './HomePage';
 import ProductDetailsPage from './ProductDetailsPage'; // Importing the ProductDetailsPage component
+import ProductListingPage from './ProductListingPage'; // Importing the ProductListingPage component
 import CartPage from './CartPage';
 import CheckoutPage from './CheckoutPage';
 import NotFoundPage from './NotFoundPage'; // Importing the NotFoundPage component
@@ -17,6 +18,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/product/:productId" component={ProductDetailsPage} /> {/* Adding route for ProductDetailsPage */}
+          <Route path="/products" component={ProductListingPage} /> {/* Adding route for ProductListingPage */}
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={CheckoutPage} />
           <Route component={NotFoundPage} /> {/* Fallback route for NotFoundPage */}
