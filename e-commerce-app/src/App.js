@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Layout from 'src/components/Layout.js';
-import HomePage from './HomePage';
+import Layout from './components/Layout/Layout.js';
+import HomePage from './pages/Homepage.js';
 import ProductDetailsPage from './ProductDetailsPage'; // Importing the ProductDetailsPage component
 import ProductListingPage from './ProductListingPage'; // Importing the ProductListingPage component
-import CartPage from './CartPage';
+import CartPage from './pages/CartPage/CartPage.js'; // Importing the CartPage component
 import CheckoutPage from './CheckoutPage';
 import NotFoundPage from './NotFoundPage'; // Importing the NotFoundPage component
 import OrderConfirmationPage from './OrderConfirmationPage'; // Importing the OrderConfirmationPage component
