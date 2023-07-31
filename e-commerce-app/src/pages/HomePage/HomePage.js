@@ -1,6 +1,8 @@
 import React from 'react';
-import ProductCard from './ProductCard'; // Assuming you have a ProductCard component to render individual products
-import ProductsData from './ProductsData'; // Assuming you have a component to fetch products data
+import ProductCard from '../../components/ProductCard/ProductCard'; // Use the correct relative path
+import ProductsData from '../../data/ProductsData'; // Use the correct relative path
+
+
 
 const HomePage = () => {
   const products = ProductsData(); // Fetch products data from the backend API

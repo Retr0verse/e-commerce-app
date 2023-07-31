@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Layout from './components/Layout/Layout.js';
 import HomePage from './pages/HomePage/HomePage.js';
 import ProductDetailsPage from './pages/ProductDetailsPage/ProductDetailsPage.js'; // Importing the ProductDetailsPage component

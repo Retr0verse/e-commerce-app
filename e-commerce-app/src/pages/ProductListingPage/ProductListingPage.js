@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './ProductListingPage.css';
-import ProductCard from './ProductCard'; // Assuming you have a ProductCard component to render each product card
+import ProductCard from '../../components/ProductCard/ProductCard'; // Use the correct relative path
 import axios from 'axios';
+
+
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
