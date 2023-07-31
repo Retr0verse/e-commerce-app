@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CartItem from './CartItem'; // Assuming you have a CartItem component to render individual items in the cart
+import CartItem from '../../components/CartItem/CartItem'; // Assuming you have a CartItem component to render individual items in the cart
 import './CartPage.css';
 import axios from 'axios';
 
