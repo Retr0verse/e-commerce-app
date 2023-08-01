@@ -1,28 +1,36 @@
-
-
 /* Header.css */
-.header {
+
+header {
   background-color: #333;
   color: #fff;
   padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
 }
 
-.header .logo {
-  font-size: 1.5rem;
+header .logo {
+  font-size: 1.8rem;
   font-weight: bold;
+  text-align: center; /* Center the logo */
 }
 
-.header .nav-links {
+header .nav-links {
   list-style: none;
   display: flex;
   gap: 1rem;
+  justify-content: center; /* Center the navigation links */
 }
 
-.header .nav-links li {
+header .nav-links li {
   margin-right: 1rem;
 }
 
-.header .nav-links li a {
+header .nav-links li a {
   color: #fff;
   text-decoration: none;
+  transition: color 0.2s; /* Add a smooth transition for hover effect */
+}
+
+header .nav-links li a:hover {
+  color: #f8b74a; /* Change the link color on hover */
+  text-decoration: underline; /* Add an underline on hover */
 }

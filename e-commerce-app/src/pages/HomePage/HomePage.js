@@ -1,22 +1,33 @@
-import React from 'react';
-import ProductCard from '../../components/ProductCard/ProductCard'; // Use the correct relative path
-import ProductsData from '../../data/ProductsData'; // Use the correct relative path
+import React, { useState, useEffect } from 'react';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { fetchComputerProducts } from '../../utils/api'; // Import the fetchComputerProducts function
+
 
 
 
 const HomePage = () => {
-  const products = ProductsData(); // Fetch products data from the backend API
+  const [computerProducts, setComputerProducts] = useState([]); // Use state to store the computer products
+
+  useEffect(() => {
+    const fetchProductsData = async () => {
+      const data = await fetchComputerProducts(); // Fetch computer products using the API
+      setComputerProducts(data);
+    };
+
+    fetchProductsData();
+  }, []);
 
   return (
     <div>
       <h1>Welcome to Our E-Commerce Store!</h1>
       <div className="product-grid">
-        {products.map((product) => (
+        {computerProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
   );
 };
+
 
 export default HomePage;

@@ -3,6 +3,7 @@ import CartItem from '../../components/CartItem/CartItem'; // Assuming you have 
 import './CartPage.css';
 import axios from 'axios';
 
+
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
 
