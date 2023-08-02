@@ -1,22 +1,58 @@
 /* Footer.css */
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  footer a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 0.5rem;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
 
-  footer li {
-    list-style-type: none;
+/* Stylish Footer Links */
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.2s; /* Add a smooth transition for hover effect */
+}
 
-  }
+footer a:hover {
+  color: #f8b74a; /* Change the link color on hover */
+  text-decoration: underline;
+}
+
+/* Social Media Icons */
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem; /* Add some spacing at the bottom of social icons */
+}
+
+footer .social-icons li {
+  list-style-type: none;
+  margin-right: 1rem; /* Add spacing between social icons */
+
+}
+
+footer li {
+  list-style-type: none;
+
+}
+
+footer .social-icons li:last-child {
+  margin-right: 0; /* Remove margin for the last social icon */
+}
+
+footer .social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.2s; /* Add a smooth transition for hover effect */
+}
+
+footer .social-icons a:hover {
+  color: #f8b74a; /* Change the social icon color on hover */
+}
+
+/* Copyright Text */
+footer .copyright {
+  font-size: 0.9rem;
+  opacity: 0.7; /* Reduce opacity for a subtle effect */
+}

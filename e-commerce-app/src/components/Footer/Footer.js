@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-content">
-        <p>&copy; 2023 Your E-Commerce App. All rights reserved.</p>
+        <p>&copy; 2023 Dragon Gaming LLC. All rights reserved. (non-commercial)</p>
         <nav>
           <ul>
             <li><a href="/">Home</a></li>

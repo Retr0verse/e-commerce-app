@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Welcome to Our E-Commerce Store!</h1>
+      <h1>Welcome to Dragon PC!</h1>
       <div className="product-grid">
         {computerProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
