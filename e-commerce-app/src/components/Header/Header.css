@@ -11,6 +11,8 @@ header .logo {
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center; /* Center the logo */
+  width: 100px;
+  height: auto;
 }
 
 header .nav-links {
