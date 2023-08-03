@@ -6,7 +6,7 @@ export const fetchComputerProducts = async () => {
   try {
     const response = await axios.get(`${API_URL}/products`, {
       params: {
-        category: 'electronics', // Use 'electronics' to get computer-related items
+        category: 'games', // Use 'electronics' to get computer-related items
       },
     });
     return response.data;
