@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './ProductListingPage.css';
-import ProductCard from '../../components/ProductCard/ProductCard'; // Use the correct relative path
+import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
-
-
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProducts();
+    fetchProductsByCategory('electronics'); // Fetch products from the 'electronics' category
   }, []);
 
-  const fetchProducts = async () => {
+  const fetchProductsByCategory = async (category) => {
     try {
-      const response = await axios.get('https://fakestoreapi.com/products');
+      const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
