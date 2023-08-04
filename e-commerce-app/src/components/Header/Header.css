@@ -19,9 +19,10 @@
 }
 
 .nav-links {
-  list-style-type: none;
+  list-style-type: none !important;
   display: flex;
   gap: 1rem;
+
 }
 
 .nav-links li {
@@ -29,12 +30,12 @@
 }
 
 .nav-links li a {
-  color: inherit; /* Use the parent color (white) for the nav links */
+  color: #fff !important; /* Use !important to ensure it overrides other styles */
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .nav-links li a:hover {
-  color: #ff6a7b; /* Add a color change on hover */
+  color: #ff6a7b;
+  text-decoration: underline; /* Add an underline on hover */
 }
-
