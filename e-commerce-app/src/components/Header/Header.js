@@ -6,12 +6,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">Fashion Emporium</Link>
+        <Link to="/">EMPORIUM</Link>
       </div>
       <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/cart">Cart</Link>
+        <Link to="/" style={{ textDecoration: 'none' , color: 'black' }}>Home</Link>
+        <Link to="/products" style={{ textDecoration: 'none' , color: 'black' }} >Clothing</Link>
+        <Link to="/products" style={{ textDecoration: 'none' , color: 'black' }}>Fine Jewelry</Link>
+        <Link to="/cart" style={{ textDecoration: 'none' , color: 'black' }}>Cart</Link>
       </nav>
     </header>
   );
