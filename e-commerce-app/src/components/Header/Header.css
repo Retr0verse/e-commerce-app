@@ -1,59 +1,40 @@
-/* Header.css */
-/* Logo image from Vecteezy */
-header {
-  background-color: #333;
+.header {
+  background-color: #ff8c9e;
   color: #fff;
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Add a box shadow for depth */
-}
-
-header .logo {
-  font-size: 2rem; /* Increase font size for the logo */
-  font-weight: bold;
-  text-align: center; /* Center the logo */
-  width: 150px; /* Increase logo width for a larger visual impact */
-  height: auto;
-  margin-bottom: 1rem; /* Add some space between the logo and navigation links */
-}
-
-header .nav-links {
-  list-style: none;
   display: flex;
-  gap: 2rem; /* Increase the gap between navigation links for better spacing */
-  justify-content: center; /* Center the navigation links */
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header .nav-links li {
-  /* Add a stylish line separator between navigation links */
-  position: relative;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-header .nav-links li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  right: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 80%;
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-header .nav-links li a {
+.logo a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.2s; /* Add a smooth transition for hover effect */
-  position: relative; /* Add relative positioning for a z-index effect */
 }
 
-header .nav-links li a:hover {
-  color: #f8b74a; /* Change the link color on hover */
-  text-decoration: underline; /* Add an underline on hover */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
 }
 
-/* Add a subtle scale effect to the logo and navigation links on hover */
-header .logo:hover,
-header .nav-links li a:hover {
-  transform: scale(1.05);
+.nav-links li {
+  margin-right: 1rem;
 }
+
+.nav-links li a {
+  color: inherit; /* Use the parent color (white) for the nav links */
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ff6a7b; /* Add a color change on hover */
+}
+

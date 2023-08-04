@@ -1,29 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  './Header.css';
-import LogoImage from '../../assets/Logo.png';
+import './Header.css';
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <div className="logo">
-          <Link to="/"><img src={LogoImage} alt="Logo" className="logo" /></Link>
-        </div>
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/products">Products</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+    <header className="header">
+      <div className="logo">
+        <Link to="/">Fashion Emporium</Link>
+      </div>
+      <nav className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/cart">Cart</Link>
       </nav>
     </header>
   );

@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import './ProductListingPage.css';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
+import './ProductListingPage.css';
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProductsByCategory('electronics'); // Fetch products from the 'electronics' category
+    fetchProductsByCategories(["women's clothing", "jewelery"]); // Fetch products from multiple categories
+
   }, []);
 
-  const fetchProductsByCategory = async (category) => {
+  const fetchProductsByCategories = async (categories) => {
     try {
-      const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
-      setProducts(response.data);
+      const allProducts = await Promise.all(categories.map(category => axios.get(`https://fakestoreapi.com/products/category/${category}`)));
+      const combinedProducts = allProducts.flatMap(response => response.data);
+      setProducts(combinedProducts);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
@@ -21,16 +23,16 @@ const ProductListingPage = () => {
 
   return (
     <div className="product-listing-page">
-      <h1>Products</h1>
-      {products.length > 0 ? (
-        <div className="product-list">
-          {products.map((product) => (
+      <h1>Explore Women's Clothing and Jewelry Collections</h1>
+      <div className="product-grid">
+        {products.length > 0 ? (
+          products.map((product) => (
             <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      ) : (
-        <p>Loading products...</p>
-      )}
+          ))
+        ) : (
+          <p>Loading products...</p>
+        )}
+      </div>
     </div>
   );
 };
