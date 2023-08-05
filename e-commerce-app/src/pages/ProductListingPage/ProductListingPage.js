@@ -7,7 +7,7 @@ const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProductsByCategories(["women's clothing", "jewelery"]); // Fetch products from multiple categories
+    fetchProductsByCategories(["women's clothing"]); // Fetch products from multiple categories
 
   }, []);
 
@@ -23,7 +23,7 @@ const ProductListingPage = () => {
 
   return (
     <div className="product-listing-page">
-      <h1>Explore Women's Clothing and Jewelry Collections</h1>
+      <h1>Explore Women's Clothing</h1>
       <div className="product-grid">
         {products.length > 0 ? (
           products.map((product) => (
