@@ -11,7 +11,7 @@ const Header = () => {
       <nav className="nav-links">
         <Link to="/" style={{ textDecoration: 'none' , color: 'black' }}>Home</Link>
         <Link to="/products" style={{ textDecoration: 'none' , color: 'black' }} >Clothing</Link>
-        <Link to="/products" style={{ textDecoration: 'none' , color: 'black' }}>Fine Jewelry</Link>
+        <Link to="/jewelry" style={{ textDecoration: 'none' , color: 'black' }}>Fine Jewelry</Link>
         <Link to="/cart" style={{ textDecoration: 'none' , color: 'black' }}>Cart</Link>
       </nav>
     </header>

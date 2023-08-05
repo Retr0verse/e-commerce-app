@@ -8,7 +8,7 @@ import CartPage from './pages/CartPage/CartPage'; // Importing the CartPage comp
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'; // Importing the NotFoundPage component
 import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmationPage'; // Importing the OrderConfirmationPage component
-
+import JewelryProductPage from './pages/JewelryProductPage/JewelryProductPage'; //
 
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
           <Route exact path="/" component={HomePage} />
           <Route path="/product/:productId" component={ProductDetailsPage} /> {/* Adding route for ProductDetailsPage */}
           <Route path="/products" component={ProductListingPage} /> {/* Adding route for ProductListingPage */}
+          <Route path="/jewelry" component={JewelryProductPage} /> {/* Adding route for*/}
           <Route path="/cart" component={CartPage} />
           <Route path="/checkout" component={CheckoutPage} />
           <Route component={NotFoundPage} /> {/* Fallback route for NotFoundPage */}
