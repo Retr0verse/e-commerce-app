@@ -3,27 +3,26 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
 import './JewelryProductPage.css';
 
-const ProductListingPage = () => {
+const JewelryProductPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProductsByCategories(["jewelery"]); // Fetch products from multiple categories
+    fetchProductsByCategory('jewelery'); // Fetch products from the 'jewelery' category
 
   }, []);
 
-  const fetchProductsByCategories = async (categories) => {
+  const fetchProductsByCategory = async (category) => {
     try {
-      const allProducts = await Promise.all(categories.map(category => axios.get(`https://fakestoreapi.com/products/category/${category}`)));
-      const combinedProducts = allProducts.flatMap(response => response.data);
-      setProducts(combinedProducts);
+      const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
+      setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
 
   return (
-    <div className="product-listing-page">
-      <h1>Explore Women's Clothing</h1>
+    <div className="jewelry-product-page">
+      <h1>Explore Jewelry</h1>
       <div className="product-grid">
         {products.length > 0 ? (
           products.map((product) => (
@@ -37,4 +36,4 @@ const ProductListingPage = () => {
   );
 };
 
-export default ProductListingPage;
+export default JewelryProductPage;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CartItem from './CartItem';
 import './Cart.css';
@@ -46,4 +46,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

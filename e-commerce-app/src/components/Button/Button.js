@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Button.css';
 
-const ButtonSection = () => {
-  const handleAddToCart = (productId) => {
-    // Handle logic for adding the product with the given ID to the cart
-    console.log(`Adding product ${productId} to cart`);
+const Button = ({ product }) => {
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAddToCart = () => {
+    setCartItems([...cartItems, product]);
   };
 
-  const handleRemoveFromCart = (productId) => {
-    // Handle logic for removing the product with the given ID from the cart
-    console.log(`Removing product ${productId} from cart`);
+  const handleRemoveFromCart = () => {
+    const updatedCart = cartItems.filter(item => item.id !== product.id);
+    setCartItems(updatedCart);
   };
 
-  const handleCheckout = () => {
-    // Handle logic for proceeding to the checkout page or initiating the checkout process
-    console.log('Proceeding to checkout');
+  const calculateTotalPrice = () => {
+    let total = 0;
+    cartItems.forEach(item => {
+      total += item.price * item.quantity;
+    });
+    return total;
   };
 
   return (
     <div className="button-section">
-      <button onClick={() => handleAddToCart(1)}>Add to Cart</button>
-      <button onClick={() => handleRemoveFromCart(1)}>Remove from Cart</button>
-      <button onClick={handleCheckout}>Checkout</button>
+      {cartItems.some(item => item.id === product.id) ? (
+        <>
+          <button onClick={handleRemoveFromCart}>Remove from Cart</button>
+          <p>Added to Cart</p>
+        </>
+      ) : (
+        <button onClick={handleAddToCart}>Add to Cart</button>
+      )}
+      <p>Total Price: ${calculateTotalPrice()}</p>
     </div>
   );
 };
 
-export default ButtonSection;
+export default Button;

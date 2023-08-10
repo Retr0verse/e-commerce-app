@@ -7,15 +7,14 @@ const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetchProductsByCategories(["women's clothing"]); // Fetch products from multiple categories
+    fetchProductsByCategory("women's clothing"); // Fetch products from the 'women's clothing' category
 
   }, []);
 
-  const fetchProductsByCategories = async (categories) => {
+  const fetchProductsByCategory = async (category) => {
     try {
-      const allProducts = await Promise.all(categories.map(category => axios.get(`https://fakestoreapi.com/products/category/${category}`)));
-      const combinedProducts = allProducts.flatMap(response => response.data);
-      setProducts(combinedProducts);
+      const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`);
+      setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
