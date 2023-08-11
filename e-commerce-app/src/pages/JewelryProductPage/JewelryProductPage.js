@@ -8,7 +8,6 @@ const JewelryProductPage = () => {
 
   useEffect(() => {
     fetchProductsByCategory('jewelery'); // Fetch products from the 'jewelery' category
-
   }, []);
 
   const fetchProductsByCategory = async (category) => {

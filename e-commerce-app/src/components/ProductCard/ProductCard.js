@@ -1,7 +1,5 @@
 import React from 'react';
 import './ProductCard.css';
-import Button from '../Button/Button'; // Import the ButtonSection component
-
 // ... (existing imports)
 
 const ProductCard = ({ product, onAddToCart, onRemoveFromCart, isInCart }) => {
