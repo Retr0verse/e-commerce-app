@@ -1,37 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Button.css';
 
-const Button = ({ product }) => {
-  const [cartItems, setCartItems] = useState([]);
-
-  const handleAddToCart = () => {
-    setCartItems([...cartItems, product]);
-  };
-
-  const handleRemoveFromCart = () => {
-    const updatedCart = cartItems.filter(item => item.id !== product.id);
-    setCartItems(updatedCart);
-  };
-
-  const calculateTotalPrice = () => {
-    let total = 0;
-    cartItems.forEach(item => {
-      total += item.price * item.quantity;
-    });
-    return total;
-  };
-
+const Button = ({ onAddToCart, onRemoveFromCart }) => {
   return (
     <div className="button-section">
-      {cartItems.some(item => item.id === product.id) ? (
-        <>
-          <button onClick={handleRemoveFromCart}>Remove from Cart</button>
-          <p>Added to Cart</p>
-        </>
-      ) : (
-        <button onClick={handleAddToCart}>Add to Cart</button>
-      )}
-      <p>Total Price: ${calculateTotalPrice()}</p>
+      <button onClick={onAddToCart}>Add to Cart</button>
+      <button onClick={onRemoveFromCart}>Remove from Cart</button>
+      <button>Checkout</button>
     </div>
   );
 };

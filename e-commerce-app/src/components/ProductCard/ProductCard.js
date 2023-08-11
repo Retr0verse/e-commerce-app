@@ -1,6 +1,5 @@
 import React from 'react';
 import './ProductCard.css';
-// ... (existing imports)
 
 const ProductCard = ({ product, onAddToCart, onRemoveFromCart, isInCart }) => {
   return (
@@ -15,7 +14,7 @@ const ProductCard = ({ product, onAddToCart, onRemoveFromCart, isInCart }) => {
             <p>Added to Cart</p>
           </>
         ) : (
-          <button onClick={onAddToCart}>Add to Cart</button>
+          <button onClick={() => onAddToCart(product)}>Add to Cart</button>
         )}
       </div>
     </div>

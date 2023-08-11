@@ -3,22 +3,7 @@ import axios from 'axios';
 import CartItem from './CartItem';
 import './Cart.css';
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    fetchCartItems();
-  }, []);
-
-  const fetchCartItems = async () => {
-    try {
-      const response = await axios.get('https://fakestoreapi.com/carts/1');
-      setCartItems(response.data.products);
-    } catch (error) {
-      console.error('Error fetching cart items:', error);
-    }
-  };
-
+const Cart = ({ cartItems, handleRemoveFromCart }) => {
   const calculateTotalPrice = () => {
     let total = 0;
     cartItems.forEach((item) => {
@@ -35,7 +20,12 @@ const Cart = () => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <CartItem key={item.id} item={item} />
+            <CartItem
+              key={item.id}
+              item={item}
+              onRemoveFromCart={() => handleRemoveFromCart(item.id)}
+              isInCart={true} // Always true for items in cart
+            />
           ))}
           <h4>Total Price: ${calculateTotalPrice()}</h4>
           <button>Checkout</button>
