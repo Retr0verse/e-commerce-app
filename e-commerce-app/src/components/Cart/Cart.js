@@ -1,31 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import CartItem from './CartItem';
+import React from 'react';
+import CartItem from '../CartItem/CartItem';
 import './Cart.css';
 
-const Cart = ({ cartItems, handleRemoveFromCart }) => {
+const Cart = ({ cartItems }) => {
   const calculateTotalPrice = () => {
-    let total = 0;
-    cartItems.forEach((item) => {
-      total += item.price * item.quantity;
-    });
-    return total;
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   return (
-    <div>
+    <div className="cart">
       <h2>Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <div>
           {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              onRemoveFromCart={() => handleRemoveFromCart(item.id)}
-              isInCart={true} // Always true for items in cart
-            />
+            <CartItem key={item.id} item={item} />
           ))}
           <h4>Total Price: ${calculateTotalPrice()}</h4>
           <button>Checkout</button>

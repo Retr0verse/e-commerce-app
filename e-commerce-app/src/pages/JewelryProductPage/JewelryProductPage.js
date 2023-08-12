@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
 import './JewelryProductPage.css';
-import Button from '../../components/Button/Button'; // Import the Button component
 
 const JewelryProductPage = () => {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // Initialize cart items state
+  const [cartItems, setCartItems] = useState([]); // Add cartItems state
 
   useEffect(() => {
     fetchProductsByCategory('jewelery');
+
   }, []);
 
   const fetchProductsByCategory = async (category) => {
@@ -21,17 +21,6 @@ const JewelryProductPage = () => {
     }
   };
 
-  const handleAddToCart = (product) => {
-    // Add product to cartItems
-    setCartItems([...cartItems, product]);
-  };
-
-  const handleRemoveFromCart = (productId) => {
-    // Remove product from cartItems
-    const updatedCart = cartItems.filter(item => item.id !== productId);
-    setCartItems(updatedCart);
-  };
-
   return (
     <div className="jewelry-product-page">
       <h1>Explore Jewelry</h1>
@@ -41,16 +30,14 @@ const JewelryProductPage = () => {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={() => handleAddToCart(product)}
-              onRemoveFromCart={() => handleRemoveFromCart(product.id)}
-              isInCart={cartItems.some(item => item.id === product.id)}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
             />
           ))
         ) : (
           <p>Loading products...</p>
         )}
       </div>
-      <Button onAddToCart={() => {}} onRemoveFromCart={() => {}} />
     </div>
   );
 };

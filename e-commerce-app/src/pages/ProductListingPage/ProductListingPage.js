@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import axios from 'axios';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import Cart from '../../components/Cart/Cart'; // Make sure to import Cart component
 import './ProductListingPage.css';
-import Button from '../../components/Button/Button'; // Import the Button component
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // Initialize cart items state
+  const [cartItems, setCartItems] = useState([]); // Add cartItems state
 
   useEffect(() => {
     fetchProductsByCategory("women's clothing");
@@ -21,15 +21,8 @@ const ProductListingPage = () => {
     }
   };
 
-  const handleAddToCart = (product) => {
-    // Add product to cartItems
-    setCartItems([...cartItems, product]);
-  };
-
-  const handleRemoveFromCart = (productId) => {
-    // Remove product from cartItems
-    const updatedCart = cartItems.filter(item => item.id !== productId);
-    setCartItems(updatedCart);
+  const addToCart = (product) => {
+    setCartItems((prevCartItems) => [...prevCartItems, { ...product, quantity: 1 }]);
   };
 
   return (
@@ -41,16 +34,14 @@ const ProductListingPage = () => {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={() => handleAddToCart(product)}
-              onRemoveFromCart={() => handleRemoveFromCart(product.id)}
-              isInCart={cartItems.some(item => item.id === product.id)}
+              onAddToCart={addToCart} // Pass the addToCart function as a prop
             />
           ))
         ) : (
           <p>Loading products...</p>
         )}
       </div>
-      <Button onAddToCart={() => {}} onRemoveFromCart={() => {}} />
+      <Cart cartItems={cartItems} /> {/* Display the cart */}
     </div>
   );
 };
