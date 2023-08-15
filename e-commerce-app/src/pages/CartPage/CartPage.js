@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import CartItem from '../../components/CartItem/CartItem';
-import Cart from '../../components/Cart/Cart'; // Make sure the import path is correct
 import './CartPage.css';
 
-const CartPage = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    fetchCartItems();
-  }, []);
-
-  const fetchCartItems = async () => {
-    try {
-      const response = await axios.get('https://fakestoreapi.com/carts/1');
-      setCartItems(response.data.products);
-    } catch (error) {
-      console.error('Error fetching cart items:', error);
-    }
-  };
-
+const CartPage = ({ cartItems, removeFromCart }) => {
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
@@ -32,9 +15,10 @@ const CartPage = () => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <CartItem key={item.id} item={item} cartItems={cartItems} setCartItems={setCartItems} />
+            <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
           ))}
-          <Cart cartItems={cartItems} setCartItems={setCartItems} />
+          <h4>Total Price: ${calculateTotalPrice()}</h4>
+          <button>Checkout</button>
         </div>
       )}
     </div>

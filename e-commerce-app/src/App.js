@@ -11,24 +11,24 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmati
 import JewelryProductPage from './pages/JewelryProductPage/JewelryProductPage';
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([]); // Manage cart items state
+  const [cartItems, setCartItems] = useState([]);
 
-  // Functions to add and remove items from cart
+  // Function to add item to cart
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
+
     if (existingItem) {
-      // If item exists in cart, increase quantity
       setCartItems((prevCartItems) =>
         prevCartItems.map((item) =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
     } else {
-      // If item doesn't exist in cart, add with quantity 1
       setCartItems((prevCartItems) => [...prevCartItems, { ...product, quantity: 1 }]);
     }
   };
 
+  // Function to remove item from cart
   const removeFromCart = (productId) => {
     setCartItems((prevCartItems) =>
       prevCartItems.filter((item) => item.id !== productId)
@@ -44,19 +44,25 @@ const App = () => {
           <Route
             path="/products"
             render={(props) => (
-              <ProductListingPage {...props} cartItems={cartItems} setCartItems={setCartItems} />
+              <ProductListingPage {...props} addToCart={addToCart} />
             )}
-            />
-            <Route
-              path="/jewelry"
-              render={(props) => (
-                <JewelryProductPage {...props} cartItems={cartItems} setCartItems={setCartItems} />
-              )}
-            />
-            <Route
-              path="/cart"
-              render={(props) => <CartPage {...props} cartItems={cartItems} setCartItems={setCartItems} />}
-            />
+          />
+          <Route
+            path="/jewelry"
+            render={(props) => (
+              <JewelryProductPage {...props} addToCart={addToCart} />
+            )}
+          />
+          <Route
+            path="/cart"
+            render={(props) => (
+              <CartPage
+                {...props}
+                cartItems={cartItems}
+                removeFromCart={removeFromCart}
+              />
+            )}
+          />
           <Route path="/checkout" component={CheckoutPage} />
           <Route path="/order-confirmation" component={OrderConfirmationPage} />
           <Route component={NotFoundPage} />

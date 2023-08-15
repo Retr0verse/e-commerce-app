@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../../components/ProductCard/ProductCard';
-import Cart from '../../components/Cart/Cart'; // Make sure to import Cart component
 import './ProductListingPage.css';
 
-const ProductListingPage = () => {
+const ProductListingPage = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]); // Add cartItems state
 
   useEffect(() => {
     fetchProductsByCategory("women's clothing");
@@ -21,10 +19,6 @@ const ProductListingPage = () => {
     }
   };
 
-  const addToCart = (product) => {
-    setCartItems((prevCartItems) => [...prevCartItems, { ...product, quantity: 1 }]);
-  };
-
   return (
     <div className="product-listing-page">
       <h1>Explore Women's Clothing</h1>
@@ -34,14 +28,13 @@ const ProductListingPage = () => {
             <ProductCard
               key={product.id}
               product={product}
-              onAddToCart={addToCart} // Pass the addToCart function as a prop
+              addToCart={addToCart}
             />
           ))
         ) : (
           <p>Loading products...</p>
         )}
       </div>
-      <Cart cartItems={cartItems} /> {/* Display the cart */}
     </div>
   );
 };
