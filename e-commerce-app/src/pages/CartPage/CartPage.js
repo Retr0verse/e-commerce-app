@@ -15,7 +15,11 @@ const CartPage = ({ cartItems, removeFromCart }) => {
       ) : (
         <div>
           {cartItems.map((item) => (
-            <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
+            <CartItem
+              key={item.id}
+              item={item}
+              removeFromCart={removeFromCart} // Pass the function down
+            />
           ))}
           <h4>Total Price: ${calculateTotalPrice()}</h4>
           <button>Checkout</button>
