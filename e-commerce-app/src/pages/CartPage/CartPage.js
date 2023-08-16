@@ -1,6 +1,8 @@
 import React from 'react';
 import CartItem from '../../components/CartItem/CartItem';
 import './CartPage.css';
+import { Link } from 'react-router-dom';
+
 
 const CartPage = ({ cartItems, removeFromCart }) => {
   const calculateTotalPrice = () => {
@@ -22,8 +24,9 @@ const CartPage = ({ cartItems, removeFromCart }) => {
             />
           ))}
           <h4>Total Price: ${calculateTotalPrice()}</h4>
-          <button>Checkout</button>
-        </div>
+          <Link to="/checkout">
+        <button>Checkout</button>
+      </Link>        </div>
       )}
     </div>
   );
