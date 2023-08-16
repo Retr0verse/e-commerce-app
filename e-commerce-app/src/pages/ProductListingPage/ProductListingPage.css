@@ -17,3 +17,10 @@
   margin-top: 10vw;
 
 }
+
+.custom-toast {
+  background-color: #fff; /* Blue color, change to match your theme */
+  color: black;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}

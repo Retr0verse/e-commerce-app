@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import './ProductListingPage.css';
 
@@ -19,6 +21,16 @@ const ProductListingPage = ({ addToCart }) => {
     }
   };
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    toast.success(`${product.title} added to cart!`, {
+      position: toast.POSITION.TOP_CENTER,
+      autoClose: 2000,
+      className: 'custom-toast', // Apply your custom toast style
+
+    });
+  };
+
   return (
     <div className="product-listing-page">
       <h1>Explore Women's Clothing</h1>
@@ -28,13 +40,14 @@ const ProductListingPage = ({ addToCart }) => {
             <ProductCard
               key={product.id}
               product={product}
-              addToCart={addToCart}
+              addToCart={() => handleAddToCart(product)}
             />
           ))
         ) : (
           <p>Loading products...</p>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
