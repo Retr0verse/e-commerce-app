@@ -4,7 +4,9 @@ import './Cart.css';
 
 const Cart = ({ cartItems }) => {
   const calculateTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    // Use toFixed() to round the total to 2 decimal places
+    return total.toFixed(2);
   };
 
   return (
