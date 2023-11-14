@@ -8,7 +8,7 @@ const HomePage = () => {
         <div className="hero-content">
           <h1>Welcome to Emporium!</h1>
           <p>Shop the latest trends in women's clothing and jewelry.</p>
-          <a href="/products" className="shop-now-link">Shop Now</a>
+          <a href="#/products" className="shop-now-link">Shop Now</a>
         </div>
       </div>
       <div className="product-grid">
