@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/e-commerce-app/static/css/main.5fbc5d58.css",
-    "main.js": "/e-commerce-app/static/js/main.f4c329f3.js",
+    "main.js": "/e-commerce-app/static/js/main.cd7000f6.js",
     "static/media/Emporium Hero.png": "/e-commerce-app/static/media/Emporium Hero.8ea819bd3104b700deab.png",
     "index.html": "/e-commerce-app/index.html",
     "main.5fbc5d58.css.map": "/e-commerce-app/static/css/main.5fbc5d58.css.map",
-    "main.f4c329f3.js.map": "/e-commerce-app/static/js/main.f4c329f3.js.map"
+    "main.cd7000f6.js.map": "/e-commerce-app/static/js/main.cd7000f6.js.map"
   },
   "entrypoints": [
     "static/css/main.5fbc5d58.css",
-    "static/js/main.f4c329f3.js"
+    "static/js/main.cd7000f6.js"
   ]
 }
