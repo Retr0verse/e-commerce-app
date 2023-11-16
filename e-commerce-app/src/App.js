@@ -9,9 +9,8 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmationPage';
 import JewelryProductPage from './pages/JewelryProductPage/JewelryProductPage';
-import Home from './Home'; // Assuming you have a Home component
-import About from './About';
-import Contact from './Contact';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
