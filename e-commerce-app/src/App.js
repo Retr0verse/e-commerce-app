@@ -9,11 +9,13 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage/OrderConfirmationPage';
 import JewelryProductPage from './pages/JewelryProductPage/JewelryProductPage';
+import Home from './Home'; // Assuming you have a Home component
+import About from './About';
+import Contact from './Contact';
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
 
-  // Function to add item to cart
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
 
@@ -28,7 +30,6 @@ const App = () => {
     }
   };
 
-  // Function to remove item from cart
   const removeFromCart = (productId) => {
     setCartItems((prevCartItems) =>
       prevCartItems.filter((item) => item.id !== productId)
@@ -65,6 +66,8 @@ const App = () => {
           />
           <Route path="/checkout" component={CheckoutPage} />
           <Route path="/order-confirmation" component={OrderConfirmationPage} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
           <Route component={NotFoundPage} />
         </Switch>
       </Layout>
