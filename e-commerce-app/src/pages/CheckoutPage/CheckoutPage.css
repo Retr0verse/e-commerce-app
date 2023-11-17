@@ -1,5 +1,5 @@
 /* Custom styles for the checkout page section */
-.checkout-page {
+/*.checkout-page {
   margin: 20px;
 }
 
@@ -57,7 +57,7 @@ button.checkout-button:hover {
 }
 
 /* Responsive styles for smaller screens */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .checkout-form {
     width: 90%;
   }
