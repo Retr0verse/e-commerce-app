@@ -1,6 +1,6 @@
 import React from 'react';
 import './CheckoutPage.css';
-import CartItem from './CartItem';  // Adjust the import path based on your project structure
+import CartItem from './components/CartItem/CartItem';  // Adjust the import path based on your project structure
 
 const CheckoutPage = ({ cartItems }) => {
   const calculateTotalPrice = () => {
