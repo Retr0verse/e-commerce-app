@@ -1,5 +1,6 @@
 import React from 'react';
 import './CheckoutPage.css';
+import CartItem from './CartItem';  // Adjust the import path based on your project structure
 
 const CheckoutPage = ({ cartItems }) => {
   const calculateTotalPrice = () => {
@@ -12,10 +13,11 @@ const CheckoutPage = ({ cartItems }) => {
       <div className="checkout-summary">
         <h2>Order Summary</h2>
         {cartItems.map((item) => (
-          <div key={item.id} className="checkout-item">
-            <span>{item.name}</span>
-            <span>{item.quantity} x ${item.price}</span>
-          </div>
+          <CartItem
+            key={item.id}
+            item={item}
+            removeFromCart={() => {} /* Implement the removeFromCart function if needed */}
+          />
         ))}
         <h4>Total Price: ${calculateTotalPrice()}</h4>
       </div>
