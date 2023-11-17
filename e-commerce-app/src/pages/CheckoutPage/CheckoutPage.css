@@ -1,5 +1,64 @@
 /* Custom styles for the checkout page section */
 .checkout-page {
-    margin: 20px;
+  margin: 20px;
+}
+
+.checkout-summary {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.checkout-summary h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkout-form {
+  width: 70%;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button.checkout-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.checkout-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .checkout-form {
+    width: 90%;
   }
-  
+}
